@@ -10,9 +10,17 @@ export interface Cycle {
   finishedDate?: Date
 }
 
-interface CyclesState {
+export interface CyclesState {
   cycles: Cycle[]
   activeCycleId: string | null
+}
+
+interface ReducerAction {
+  type: string
+  payload?: {
+    newCycle: Cycle
+    activeCycleId: string | null
+  }
 }
 
 export function cyclesReducer(state: CyclesState, action: any) {
